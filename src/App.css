@@ -1,0 +1,165 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  will-change: filter, transform;
+  transition: filter 300ms, transform 200ms;
+  text-decoration: none;
+  color: inherit;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 1.2em #646cff66);
+  transform: translateY(-2px);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Hero heading styles for large branded title with trademark and smaller tagline */
+.hero-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.hero-main {
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  /* responsive size: min 48px, scales with viewport, max 120px */
+  font-size: clamp(48px, 10vw, 120px);
+  text-transform: uppercase;
+}
+.tm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.4rem;
+  vertical-align: super;
+  /* size the badge relative to the heading font-size */
+  font-size: 0.36em;
+  line-height: 1;
+  min-width: 1.2em;
+  height: 1.2em;
+  padding: 0.08em 0.22em;
+  border-radius: 999px;
+  background: #0f172a; /* dark slate for contrast */
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.15) inset;
+}
+
+.hero-tagline {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #374151; /* slate-700 */
+  /* make tagline scale more closely with heading so sizes match visually */
+  font-size: clamp(18px, 4vw, 48px);
+  letter-spacing: 0.03em;
+}
+
+/* Utility: remove top spacing for tightly stacked sections */
+.no-top-gap {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Buyers steps */
+.buyers-steps {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+}
+.steps-inline {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* keep all steps on a single line */
+  overflow: visible; /* no scroll */
+  padding: 0.25rem 0.25rem;
+  white-space: nowrap;
+}
+.steps-inline .step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  padding: 0.08rem 0.4rem;
+  min-width: 0;
+  flex: 1 1 0; /* allow items to shrink and share space */
+  white-space: nowrap;
+}
+.steps-inline .step-body { display: inline-flex; flex-direction: column; gap: 2px; align-items: flex-start; text-align: left; min-width: 0; }
+.steps-inline .step-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: transparent;
+  color: #0b1220;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  border: 2px solid rgba(15,23,42,0.06);
+}
+.steps-inline .step-title {
+  font-weight: 800;
+  font-size: clamp(12px, 1.2vw, 14px);
+  color: #0b1220;
+}
+.steps-inline .step-desc {
+  margin-top: 0;
+  color: #6b7280;
+  font-size: clamp(10px, 1vw, 12px);
+  opacity: 0.95;
+}
+.step-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(11,18,32,0.18);
+  font-size: 1.6rem;
+  padding: 0 0.25rem;
+}
+
+@media (min-width: 1100px) {
+  .steps-inline { gap: 2.25rem; }
+  .steps-inline .step { min-width: 200px; }
+  .steps-inline .step-number { width: 44px; height: 44px; font-size: 1rem; }
+  .steps-inline .step-title { font-size: 1.05rem; }
+  .steps-inline .step-desc { font-size: 0.95rem; }
+}
+
+/* hide scrollbar but keep scrolling available */
+.steps-inline::-webkit-scrollbar { height: 8px; }
+.steps-inline::-webkit-scrollbar-thumb { background: rgba(11,18,32,0.06); border-radius: 999px; }
+.steps-inline { scrollbar-width: thin; scrollbar-color: rgba(11,18,32,0.06) transparent; }

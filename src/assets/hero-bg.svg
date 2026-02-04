@@ -1,0 +1,36 @@
+<svg width="1600" height="800" viewBox="0 0 1600 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Subtle abstract background">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#f8fbff" />
+      <stop offset="1" stop-color="#eef6ff" />
+    </linearGradient>
+    <radialGradient id="g2" cx="30%" cy="20%" r="60%">
+      <stop offset="0" stop-color="#e6f0ff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="800" fill="url(#g1)" />
+  <rect width="1600" height="800" fill="url(#g2)" />
+
+  <!-- soft geometric shapes -->
+  <g fill="#dbeafe" opacity="0.9">
+    <circle cx="1200" cy="100" r="160" />
+    <ellipse cx="280" cy="220" rx="260" ry="120" />
+  </g>
+
+  <g fill="#e0f2fe" opacity="0.85">
+    <rect x="920" y="340" width="420" height="260" rx="28" transform="rotate(-12 1130 470)" />
+    <circle cx="500" cy="560" r="120" />
+  </g>
+
+  <!-- faint dotted pattern -->
+  <g fill="#cfe8ff" opacity="0.6">
+    <circle cx="80" cy="80" r="2" />
+    <circle cx="120" cy="120" r="2" />
+    <circle cx="160" cy="160" r="2" />
+    <circle cx="200" cy="200" r="2" />
+    <circle cx="240" cy="240" r="2" />
+  </g>
+
+</svg>
