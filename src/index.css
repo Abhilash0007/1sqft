@@ -48,6 +48,14 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
   z-index: 1000;
   box-shadow: 0 1px 0 rgba(16,24,40,0.03);
   border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    padding: 0 12px;
+    height: 64px;
+  }
 }
 
 /* Navbar layout helpers to keep logo left, links center, actions right */
@@ -149,7 +157,19 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 .hero > div { position: relative; z-index: 2; }
 
 /* Premium Buttons */
-.btn-group { display: flex; gap: 16px; justify-content: center; align-items: center; }
+.btn-group { display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  .btn-group {
+    gap: 12px;
+    flex-direction: column;
+  }
+  .btn-group .btn-black,
+  .btn-group .btn-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 .btn-black {
   background: var(--primary);
@@ -183,7 +203,8 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
   border: 1px solid var(--border);
   box-shadow: 0 6px 18px rgba(2,6,23,0.04);
   font-size: 14px;
-  width: 260px;
+  width: 100%;
+  max-width: 260px;
   transition: box-shadow 160ms ease, transform 160ms ease;
 }
 .search-input:focus {
@@ -194,7 +215,10 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 }
 
 @media (max-width: 640px) {
-  .search-input { width: 100%; }
+  .search-input {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 /* Grid & Cards */
@@ -450,6 +474,14 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
   background: var(--bg);
   border-radius: 18px;
 }
+
+@media (max-width: 640px) {
+  .modal {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 20px;
+  }
+}
 .modal .btn-link { background: transparent; border: none; cursor: pointer; color: var(--accent); font-weight: 700; }
 .modal .btn-small { padding: 8px 12px; border-radius: 10px; }
 
@@ -461,6 +493,17 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
 
 /* Responsive breakpoints */
+@media (max-width: 640px) {
+  .section { padding: 50px 0; }
+  .container { padding: 0 16px; }
+  .md\:grid-cols-2 { grid-template-columns: 1fr !important; }
+  .md\:grid-cols-3 { grid-template-columns: 1fr !important; }
+  .md\:grid-cols-4 { grid-template-columns: 1fr !important; }
+  .text-5xl { font-size: 1.875rem; }
+  .text-4xl { font-size: 1.5rem; }
+  .text-3xl { font-size: 1.25rem; }
+}
+
 @media (min-width: 768px) {
   .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
   .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
@@ -525,6 +568,35 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
   .text-6xl { font-size: 2.5rem; }
   .hero h1 { font-size: 2.5rem; }
   .grid { grid-template-columns: 1fr; }
+  
+  /* Better padding/margins on mobile */
+  .px-6 { padding-left: 1rem; padding-right: 1rem; }
+  .px-8 { padding-left: 1rem; padding-right: 1rem; }
+  .py-24 { padding-top: 3rem; padding-bottom: 3rem; }
+  .py-20 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .mb-12 { margin-bottom: 1.5rem; }
+  
+  /* Better card sizes on mobile */
+  .card { padding: 1.5rem 1rem; }
+  .deal-card { padding: 1rem; }
+  .teaser-card { min-height: 280px; }
+  
+  /* Better button sizes on mobile */
+  .btn-black {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+  .btn-link {
+    font-size: 15px;
+  }
+  
+  /* Better contact grid on mobile */
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-info { min-height: auto; margin-bottom: 2rem; }
+  
+  /* Better city card layout */
+  .city-card { min-height: 280px; }
+  .city-thumb { height: 120px; }
 }
 
 /* Respect user preference for reduced motion */
