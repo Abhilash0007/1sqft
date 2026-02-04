@@ -95,9 +95,14 @@
 /* Utility: remove top spacing for tightly stacked sections */
 .no-top-gap {
   padding-top: 0 !important;
-  margin-top: 0 !important;
+  /* margin-top: 0 !important; */
 }
-
+.section-top-space {
+  margin-top: 4rem;
+}
+.section-bottom-space {
+  margin-bottom: 4rem;
+}
 /* Buyers steps */
 .buyers-steps {
   background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import deal1 from '../assets/deal1.svg';
-import deal2 from '../assets/deal2.svg';
+import deal1 from '../assets/deal1.png';
+import deal2 from '../assets/deal2.png';
 
 export default function Cities() {
   const corridors = [

@@ -2,10 +2,10 @@ import React from 'react';
 import { ShieldCheck, MapPin, BadgePercent, ArrowRight, Users, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 const heroBg = new URL('../assets/hero-bg.svg', import.meta.url).href;
-const deal1 = new URL('../assets/deal1.svg', import.meta.url).href;
-const deal2 = new URL('../assets/deal2.svg', import.meta.url).href;
-const deal3 = new URL('../assets/deal3.svg', import.meta.url).href;
-const deal4 = new URL('../assets/deal4.svg', import.meta.url).href;
+const deal1 = new URL('../assets/deal1.png', import.meta.url).href;
+const deal2 = new URL('../assets/deal2.png', import.meta.url).href;
+const deal3 = new URL('../assets/deal3.png', import.meta.url).href;
+const deal4 = new URL('../assets/deal4.png', import.meta.url).href;
 
 export default function Home() {
   const featuredDeals = [
@@ -43,12 +43,12 @@ export default function Home() {
             ₹1 = 1 credit • Credits renew yearly • 1% only when you close
           </p>
 
-          <div className="hashtag-line">#1sqft4future &nbsp; • &nbsp; #Own1sqft &nbsp; • &nbsp; #1SqFtCtrl</div>
+          <div className="hashtag-line section-bottom-space section-top-space">#1sqft4future &nbsp; • &nbsp; #Own1sqft &nbsp; • &nbsp; #1SqFtCtrl</div>
         </div>
       </section>
 
       {/* How it works for buyers - step-by-step */}
-      <section className="py-12 buyers-steps bg-white no-top-gap">
+      <section className="py-12 buyers-steps bg-white no-top-gap section-top-space">
         <div className="max-w-6xl mx-auto px-6 text-center mb-8">
           <h2 className="text-3xl font-bold mb-2">How it works — For buyers</h2>
           <p className="text-slate-500">A simple, step-by-step flow to find, verify and close trusted listings.</p>
@@ -87,45 +87,30 @@ export default function Home() {
 
       {/* What you get */}
       <section className="py-14 no-top-gap">
-        <div className="max-w-5xl mx-auto px-6 text-center">
+        <div className="max-w-5xl mx-auto px-6 text-center section-top-space">
           <h2 className="text-2xl font-bold mb-3">What you get</h2>
           <p className="text-slate-600 mb-6">Verified. Negotiated. Ready to close.</p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-4 bg-white rounded shadow text-left">
-              <h4 className="font-semibold">Verified documents</h4>
-              <p className="text-sm text-slate-500 mt-1">Key checks and clean disclosures.</p>
-            </div>
-
-            <div className="p-4 bg-white rounded shadow text-left">
-              <h4 className="font-semibold">Geo-tagged proof</h4>
-              <p className="text-sm text-slate-500 mt-1">Photos, videos and inspection notes.</p>
-            </div>
-
-            <div className="p-4 bg-white rounded shadow text-left">
-              <h4 className="font-semibold">Negotiated price</h4>
-              <p className="text-sm text-slate-500 mt-1">Seller-agreed terms with validity window.</p>
-            </div>
-          </div>
+       
         </div>
       </section>
 
       {/* Proof Pillars */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-6">
-          <div className="card">
+      <section className="">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-6 ">
+          <div className=" card">
             <ShieldCheck className="text-blue-600 mb-4" size={36} />
             <h3 className="text-xl font-bold mb-2">Verified Documents</h3>
             <p className="text-slate-500 italic">Key checks. Clean disclosures.</p>
           </div>
 
-          <div className="card">
+          <div className=" card">
             <MapPin className="text-blue-600 mb-4" size={36} />
             <h3 className="text-xl font-bold mb-2">Geo-tagged Site Proof</h3>
             <p className="text-slate-500 italic">Photos. Videos. Notes.</p>
           </div>
 
-          <div className="card">
+          <div className=" card">
             <BadgePercent className="text-blue-600 mb-4" size={36} />
             <h3 className="text-xl font-bold mb-2">Negotiated Price</h3>
             <p className="text-slate-500 italic">Seller-agreed. Time-bound.</p>
@@ -134,19 +119,19 @@ export default function Home() {
       </section>
 
       {/* Featured deals teaser */}
-      <section className="py-12 bg-slate-50 mb-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-6">
-            <div>
+      <section className="py-12 bg-slate-50 mb-12 section-top-space ">
+        <div className="max-w-7xl mx-auto px-6 ">
+          <div className="flex items-center justify-between mb-6 ">
+            <div className="section-top-space ">
               <h3 className="text-2xl font-bold">Verified deals, across corridors.</h3>
               <p className="text-slate-500 text-sm">Sarjapur • Devanahalli • and more</p>
             </div>
             <Link to="/deals" className="btn-link">Explore all deals</Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
             {featuredDeals.slice(0, 4).map(d => (
-              <article key={d.id} className="teaser-card p-4 bg-white rounded shadow">
+              <article key={d.id} className="teaser-card p-4 bg-white rounded shadow section-bottom-space ">
                 <div className="mb-3">
                   <img src={d.img} alt="preview" className="w-full h-36 object-cover rounded" />
                 </div>
@@ -157,7 +142,7 @@ export default function Home() {
                   <div className="text-sm text-slate-500 mt-1">Negotiated band: <span className="font-semibold text-slate-700">{d.range}</span></div>
                 </div>
 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between ">
                   <div className="flex gap-2">
                     <span className="deal-badge">Docs</span>
                     <span className="deal-badge">Geo</span>
