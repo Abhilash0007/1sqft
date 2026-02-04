@@ -25,7 +25,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto text-center px-6">
           <div className="mb-4 hero-heading">
             <h1 className="hero-main">1SQFT<span className="tm">™</span></h1>
-            <div className="hero-tagline">1SQFT. Your SQFT.</div>
+            <div className="sub-hero-tagline">1SQFT. Your SQFT.</div>
           </div>
 
           <p className="mb-8 leading-relaxed hero-sub">Set a goal, collect credits, and close with confidence. Verified, negotiated-price properties—built on clarity. </p>
@@ -50,7 +50,7 @@ export default function Home() {
       {/* How it works for buyers - step-by-step */}
       <section className="py-12 buyers-steps bg-white no-top-gap section-top-space">
         <div className="max-w-6xl mx-auto px-6 text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2">How it works — For buyers</h2>
+          <h2 className="text-3xl font-bold mb-2">How it works for buyers</h2>
           <p className="text-slate-500">A simple, step-by-step flow to find, verify and close trusted listings.</p>
         </div>
 
@@ -84,6 +84,59 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+{/* How it works — For sellers */}
+<section className="py-12 buyers-steps bg-white no-top-gap section-top-space">
+  <div className="max-w-6xl mx-auto px-6 text-center mb-8">
+    <h2 className="text-3xl font-bold mb-2">How it works for sellers</h2>
+    <p className="text-slate-500">List with clarity. Reach verified buyers. Close faster.</p>
+  </div>
+
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="steps-inline" role="list">
+
+      <div className="step" role="listitem">
+        <div className="step-number">1</div>
+        <div className="step-body">
+          <div className="step-title">List property</div>
+          <div className="step-desc">Share property details</div>
+        </div>
+      </div>
+
+      <div className="step-arrow" aria-hidden>›</div>
+
+      <div className="step" role="listitem">
+        <div className="step-number">2</div>
+        <div className="step-body">
+          <div className="step-title">Verification</div>
+          <div className="step-desc">Upload docs & site proof</div>
+        </div>
+      </div>
+
+      <div className="step-arrow" aria-hidden>›</div>
+
+      <div className="step" role="listitem">
+        <div className="step-number">3</div>
+        <div className="step-body">
+          <div className="step-title">Price alignment</div>
+          <div className="step-desc">Agree on negotiated band</div>
+        </div>
+      </div>
+
+      <div className="step-arrow" aria-hidden>›</div>
+
+      <div className="step" role="listitem">
+        <div className="step-number">4</div>
+        <div className="step-body">
+          <div className="step-title">Meet verified buyers</div>
+          <div className="step-desc">Close with serious intent</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* What you get */}
       <section className="py-14 no-top-gap">
@@ -211,6 +264,47 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Contact Form Section */}
+<section className="contact-section">
+  <div className="contact-container">
+
+    <div className="contact-header">
+      <h3>Talk to our team</h3>
+      <p>Have questions? Want help choosing the right property? We’re here.</p>
+    </div>
+
+    <form className="contact-form">
+
+      <div className="form-row">
+        <div className="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your name" />
+        </div>
+
+        <div className="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="Enter phone number" />
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" />
+      </div>
+
+      <div className="form-group">
+        <label>Message</label>
+        <textarea rows="4" placeholder="Tell us what you are looking for..."></textarea>
+      </div>
+
+      <button type="submit" className="contact-btn">
+        Submit enquiry
+      </button>
+
+    </form>
+  </div>
+</section>
+
     </div>
   );
 }

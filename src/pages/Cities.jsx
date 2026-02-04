@@ -2,13 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import deal1 from '../assets/deal1.png';
 import deal2 from '../assets/deal2.png';
+import deal3 from '../assets/deal3.png';
+import deal4 from '../assets/deal4.png';
+
+
 
 export default function Cities() {
   const corridors = [
-    { id: 'sarjapur', name: 'Sarjapur', city: 'Bengaluru', img: deal1, note: 'Growth corridor — plots and apartments' },
+    { id: 'HSR layout', name: 'Sarjapur', city: 'Bengaluru', img: deal1, note: 'Growth corridor — plots' },
     { id: 'devanahalli', name: 'Devanahalli', city: 'Bengaluru', img: deal2, note: 'Airport-adjacent listings' },
-    { id: 'whitefield', name: 'Whitefield', city: 'Bengaluru', img: deal1, note: 'IT corridor — apartments and villas' },
-    { id: 'hebbal', name: 'Hebbal', city: 'Bengaluru', img: deal2, note: 'Connectivity and ready projects' },
+    { id: 'whitefield', name: 'Whitefield', city: 'Bengaluru', img: deal1, note: 'IT corridor — apartments ' },
+    { id: 'hebbal', name: 'Hebbal', city: 'Bengaluru', img: deal3, note: 'Connectivity and ready projects' },
+     { id: 'sarjapur', name: 'Sarjapur', city: 'Bengaluru', img: deal4, note: 'Growth corridor — plots' },
+    { id: 'jayanagar', name: 'Jayanagar', city: 'Bengaluru', img: deal2, note: 'Historic neighborhood — ready projects' },
+    { id: 'BTM layout', name: 'BTM Layout', city: 'Bengaluru', img: deal3, note: 'IT corridor — apartments ' },
+    { id: 'MG road', name: 'MG Road', city: 'Bengaluru', img: deal4, note: 'Connectivity and ready projects' },
+     { id: 'kengeri', name: 'Kengeri', city: 'Bengaluru', img: deal1, note: 'Growth corridor — plots' },
+    { id: 'Electronic city', name: 'Electronic City', city: 'Bengaluru', img: deal2, note: 'Airport-adjacent listings' },
+    { id: 'whitefield', name: 'Whitefield', city: 'Bengaluru', img: deal3, note: 'IT corridor — apartments ' },
+    { id: 'hebbal', name: 'Hebbal', city: 'Bengaluru', img: deal4, note: 'Connectivity and ready projects' },
   ];
 
   return (

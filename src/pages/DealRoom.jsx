@@ -1,7 +1,7 @@
 import React from 'react';
 import { Lock, FileText, Map, Camera, Calendar } from 'lucide-react';
 
-export default function DealRoom({ isLoggedIn = false, credits = 0 }) {
+export default function DealRoom({ onBuyCredits, isLoggedIn = false, credits = 0 }) {
   const isUnlocked = isLoggedIn && credits >= 500;
 
   if (!isUnlocked) {
@@ -14,8 +14,8 @@ export default function DealRoom({ isLoggedIn = false, credits = 0 }) {
         <p className="text-slate-500 mb-8 leading-relaxed">
           Access requires login, KYC, active credits, and a set goal. Exact location and documents are shared securely inside.
         </p>
-        <button className="px-10 py-4 bg-black text-white rounded-full font-bold shadow-xl">
-          Check Eligibility
+        <button onClick={onBuyCredits} className="px-10 py-4 bg-black text-white rounded-full font-bold shadow-xl hover:bg-slate-900 transition">
+          Buy Credits & Unlock
         </button>
       </div>
     );

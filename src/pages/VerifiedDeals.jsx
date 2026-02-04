@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import deal1 from '../assets/deal1.png';
 import deal2 from '../assets/deal2.png';
 
-export default function VerifiedDeals() {
+export default function VerifiedDeals({ onBuyCredits }) {
   const deals = [
     { id: 1, corridor: 'Sarjapur', type: 'Plot', size: '1200–1500', range: '₹X–₹Y', img: deal1 },
     { id: 2, corridor: 'Devanahalli', type: 'Apartment', size: '1100–1300', range: '₹A–₹B', img: deal2 },
@@ -63,9 +62,9 @@ export default function VerifiedDeals() {
               <Badge label="Negotiated" />
             </div>
 
-            <Link to={`/deal-room/${deal.id}`} className="btn-black">
+            <button onClick={onBuyCredits} className="btn-black">
               Unlock Deal Room
-            </Link>
+            </button>
           </article>
           ))
         )}

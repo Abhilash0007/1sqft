@@ -423,6 +423,8 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 .mb-4 { margin-bottom: 1rem; }
 .mt-4 { margin-top: 1rem; }
 .mb-3 { margin-bottom: 0.75rem; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-0\.5 { margin-top: 0.125rem; }
 .gap-4 { gap: 1rem; }
 .gap-6 { gap: 1.5rem; }
 .gap-8 { gap: 2rem; }
@@ -461,8 +463,11 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 .flex-col { flex-direction: column; }
 .sm\:flex-row { flex-direction: row; }
 .items-center { align-items: center; }
+.items-start { align-items: flex-start; }
 .justify-center { justify-content: center; }
 .justify-between { justify-content: space-between; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
 .gap-6 { gap: 1.5rem; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 .inline-block { display: inline-block; }
@@ -474,37 +479,25 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 .flex-wrap { flex-wrap: wrap; }
 .block { display: block; }
 
-/* Modal styles */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(2,6,23,0.45);
-  z-index: 2000;
-  padding: 20px;
-  overflow: auto;
-}
-.modal {
-  width: 100%;
-  max-width: 520px;
-  background: var(--bg);
-  border-radius: 18px;
-}
+/* ================= PREMIUM MODAL ================= */
 
+
+
+
+/* Mobile Optimisation */
 @media (max-width: 640px) {
+
   .modal {
+    padding: 26px;
+    border-radius: 18px;
     max-width: 100%;
-    border-radius: 12px;
-    margin: 20px;
   }
+
+  .modal-overlay {
+    padding: 16px;
+  }
+
 }
-.modal .btn-link { background: transparent; border: none; cursor: pointer; color: var(--accent); font-weight: 700; }
-.modal .btn-small { padding: 8px 12px; border-radius: 10px; }
 
 /* Grid */
 .grid { display: grid; }
@@ -537,6 +530,7 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 
 /* Containers / widths */
 .max-w-3xl { max-width: 48rem; }
+.max-w-md { max-width: 28rem; }
 .max-w-5xl { max-width: 64rem; }
 .max-w-6xl { max-width: 72rem; }
 .max-w-7xl { max-width: 80rem; }
