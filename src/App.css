@@ -1,13 +1,13 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
 @media (max-width: 640px) {
   #root {
-    padding: 1rem;
+    padding: 0;
   }
 }
 
@@ -101,6 +101,7 @@
 /* Buyers steps */
 .buyers-steps {
   background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  width: 100%;
 }
 .steps-inline {
   display: flex;
