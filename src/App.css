@@ -74,9 +74,9 @@
   /* size the badge relative to the heading font-size */
   font-size: 0.36em;
   line-height: 1;
-  min-width: 1.2em;
+  width: 1.2em;
   height: 1.2em;
-  padding: 0.08em 0.22em;
+  padding: 0;
   border-radius: 999px;
   background: #0f172a; /* dark slate for contrast */
   color: #fff;
