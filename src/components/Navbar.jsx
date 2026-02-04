@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { User } from 'lucide-react';
 import AuthModal from './AuthModal';
 
 export default function Navbar({ isLoggedIn, credits }) {
   const [authState, setAuthState] = useState({ show: false, initialRole: 'buyer', initialTab: 'login' });
+  const location = useLocation();
+  const current = location.pathname;
+  const isActive = (p) => current === p || (p !== '/' && current.startsWith(p));
 
   return (
     <nav className="nav">
@@ -18,11 +21,11 @@ export default function Navbar({ isLoggedIn, credits }) {
 
         <div className="center hidden md:flex items-center justify-center flex-1">
           <div className="nav-links flex items-center gap-6 text-sm font-medium text-slate-600">
-            <Link to="/deals" className="transition">Verified Deals</Link>
-            <Link to="/how-it-works" className="transition">How It Works</Link>
-            <Link to="/cities" className="transition">Cities</Link>
-            <Link to="/trust" className="transition">Trust</Link>
-            <Link to="/pricing" className="transition">Pricing</Link>
+            <Link to="/deals" className={`transition ${isActive('/deals') ? 'nav-link-active' : ''}`}>Verified Deals</Link>
+            <Link to="/how-it-works" className={`transition ${isActive('/how-it-works') ? 'nav-link-active' : ''}`}>How It Works</Link>
+            <Link to="/cities" className={`transition ${isActive('/cities') ? 'nav-link-active' : ''}`}>Cities</Link>
+            <Link to="/trust" className={`transition ${isActive('/trust') ? 'nav-link-active' : ''}`}>Trust</Link>
+            <Link to="/pricing" className={`transition ${isActive('/pricing') ? 'nav-link-active' : ''}`}>Pricing</Link>
           </div>
         </div>
 
