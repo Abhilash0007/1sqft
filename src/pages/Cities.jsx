@@ -9,17 +9,17 @@ import deal4 from '../assets/deal4.png';
 
 export default function Cities() {
   const corridors = [
-    { id: 'HSR layout', name: 'Sarjapur', city: 'Bengaluru', img: deal1, note: 'Growth corridor — plots' },
+    { id: 'Sarjapur', name: 'Sarjapur', city: 'Bengaluru', img: deal1, note: 'Growth corridor — plots' },
     { id: 'devanahalli', name: 'Devanahalli', city: 'Bengaluru', img: deal2, note: 'Airport-adjacent listings' },
     { id: 'whitefield', name: 'Whitefield', city: 'Bengaluru', img: deal1, note: 'IT corridor — apartments ' },
-    { id: 'hebbal', name: 'Hebbal', city: 'Bengaluru', img: deal3, note: 'Connectivity and ready projects' },
-     { id: 'sarjapur', name: 'Sarjapur', city: 'Bengaluru', img: deal4, note: 'Growth corridor — plots' },
+    { id: 'hebbal', name: 'Hebbal', city: 'Mysore', img: deal3, note: 'Connectivity and ready projects' },
+     { id: 'sarjapur', name: 'Sarjapur', city: 'Mangalore', img: deal4, note: 'Growth corridor — plots' },
     { id: 'jayanagar', name: 'Jayanagar', city: 'Bengaluru', img: deal2, note: 'Historic neighborhood — ready projects' },
-    { id: 'BTM layout', name: 'BTM Layout', city: 'Bengaluru', img: deal3, note: 'IT corridor — apartments ' },
-    { id: 'MG road', name: 'MG Road', city: 'Bengaluru', img: deal4, note: 'Connectivity and ready projects' },
+    { id: 'BTM layout', name: 'BTM Layout', city: 'Mangalore', img: deal3, note: 'IT corridor — apartments ' },
+    { id: 'MG road', name: 'MG Road', city: 'Chennai', img: deal4, note: 'Connectivity and ready projects' },
      { id: 'kengeri', name: 'Kengeri', city: 'Bengaluru', img: deal1, note: 'Growth corridor — plots' },
     { id: 'Electronic city', name: 'Electronic City', city: 'Bengaluru', img: deal2, note: 'Airport-adjacent listings' },
-    { id: 'whitefield', name: 'Whitefield', city: 'Bengaluru', img: deal3, note: 'IT corridor — apartments ' },
+    { id: 'whitefield', name: 'Whitefield', city: 'Chennai', img: deal3, note: 'IT corridor — apartments ' },
     { id: 'hebbal', name: 'Hebbal', city: 'Bengaluru', img: deal4, note: 'Connectivity and ready projects' },
   ];
 
@@ -43,8 +43,12 @@ export default function Cities() {
             </div>
 
             <div className="mt-4 flex items-center justify-between">
-              <Link to={`/deals?city=${c.city}&corridor=${c.id}`} className="btn-link">Explore deals</Link>
-              <Link to={`/deals?corridor=${c.id}`} className="btn-black btn-small">View</Link>
+<Link to={`/deals?city=${c.city}`} className="btn-link">
+  Explore deals
+</Link>
+<Link to={`/deals?corridor=${c.id}`} className="btn-black btn-small">
+  View
+</Link>
             </div>
           </article>
         ))}
