@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
+import { useAuth } from '../context/AuthContext';
 
 export default function AuthModal({ onClose, initialRole = 'buyer', initialTab = 'login' }) {
   const [tab, setTab] = useState(initialTab);
   const [role, setRole] = useState(initialRole);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const { login } = useAuth();
 
   const content = (
     <div className="modal-overlay" role="dialog" aria-modal="true">
       <div className="modal card p-6 rounded-2xl">
-        <div className="flex justify-between items-start mb-4">
+          <div className="flex justify-between items-start mb-4">
           <div>
             <h3 className="font-bold">{tab === 'login' ? 'Login' : 'Sign up'}</h3>
             <p className="text-slate-500 text-sm">{tab === 'login' ? 'Welcome back — sign in to continue.' : 'Create an account to get started.'}</p>
           </div>
-          <button onClick={onClose} aria-label="Close" className="btn-link">✕</button>
+          <button onClick={onClose} aria-label="Close" className="btn-icon">✕</button>
         </div>
 
         <div className="gap-4 mb-4" style={{display: 'flex', alignItems: 'center'}}>
@@ -48,34 +51,32 @@ export default function AuthModal({ onClose, initialRole = 'buyer', initialTab =
         {tab === 'login' ? (
           <form
             className="flex flex-col gap-4"
-            onSubmit={async (e) => {
+            onSubmit={(e) => {
               e.preventDefault();
               setLoading(true);
+              setError('');
               const form = e.target;
-              const email = form.querySelector('input[type="email"]').value;
+              const username = form.querySelector('input[type="text"]').value;
               const password = form.querySelector('input[type="password"]').value;
-              try {
-                const res = await fetch('/api/auth/login', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ role, email, password }),
-                });
-                if (!res.ok) throw new Error(await res.text());
+              
+              // Use local authentication
+              if (login(username, password, role)) {
                 alert('Login successful');
                 onClose();
-              } catch (err) {
-                alert('Login failed: ' + err.message);
-              } finally {
-                setLoading(false);
+              } else {
+                setError('Invalid username or password');
               }
+              setLoading(false);
             }}
           >
-            <input className="input" placeholder="Email" type="email" required />
+            {error && <div className="text-red-600 text-sm font-medium">{error}</div>}
+            <input className="input" placeholder="Username" type="text" required />
             <input className="input" placeholder="Password" type="password" required />
             <div className="flex justify-between items-center">
               <button className="btn-black" type="submit" disabled={loading}>{loading ? 'Signing in…' : 'Sign in'}</button>
-              <button type="button" className="btn-link">Forgot?</button>
             </div>
+            {role === 'buyer' && <p className="text-xs text-slate-500 mt-2">Demo: username: <strong>buyer</strong>, password: <strong>adminbuyer</strong></p>}
+            {role === 'seller' && <p className="text-xs text-slate-500 mt-2">Demo: username: <strong>seller</strong>, password: <strong>adminseller</strong></p>}
           </form>
         ) : (
           <form

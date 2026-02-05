@@ -72,7 +72,17 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 .nav .center { flex: 1 !important; display: flex !important; justify-content: center !important; order: 0 !important; }
 
 /* Compact variant for small action buttons inside navbar */
-.btn-small { padding: 8px 14px; font-size: 14px; }
+.btn-small {
+  padding: 8px 14px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-decoration: none;
+}
 
 .logo { font-size: 20px; font-weight: 700; letter-spacing: -0.2px; text-decoration: none; color: var(--primary); }
 .logo span { color: var(--accent); }
@@ -142,7 +152,7 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 
 /* Slightly larger hero buttons */
 .btn-black { padding: 14px 28px; }
-.btn-link { padding: 14px 18px; }
+.btn-link { padding: 14px 18px; display: inline-flex; align-items: center; gap: 8px; border-radius: 9999px; text-decoration: none; }
 
 /* Hero background styling */
 .hero {
@@ -328,7 +338,7 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
 .city-thumb { height: 156px; overflow: hidden; border-radius: 12px; }
 .city-card h3 { font-size: 18px; margin-top: 6px; }
 .city-card .btn-link { color: var(--accent); font-weight: 600; }
-.city-card .btn-black.btn-small { padding: 8px 12px; font-size: 14px; border-radius: 10px; }
+.city-card .btn-black.btn-small { padding: 8px 12px; font-size: 14px; border-radius: 12px; }
 
 /* Verification styles */
 .verification-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 8px; }
@@ -398,6 +408,44 @@ a:focus-visible, button:focus-visible, .btn-black:focus-visible {
   letter-spacing: 2px;
   color: #c1c1c7;
 }
+
+/* Modal-specific button sizing to keep modal compact and prevent overflow */
+.modal {
+  max-width: 680px;
+}
+.modal .btn-small,
+.modal .btn-link,
+.modal .btn-black {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal .btn-link {
+  text-decoration: none;
+  color: var(--accent);
+  background: transparent;
+}
+.modal .btn-black {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(2,6,23,0.06);
+  border: none;
+}
+.modal .btn-icon {
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal .btn-icon:hover { background: rgba(0,0,0,0.04); }
 
 /* Lightweight utility shim (small subset of Tailwind-like classes used by components)
    Purpose: approximate common utility classes so app renders nicely without Tailwind.

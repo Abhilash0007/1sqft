@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Lock, FileText, Map, Camera, Calendar } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+import AuthModal from '../components/AuthModal';
 
-export default function DealRoom({ onBuyCredits, isLoggedIn = false, credits = 0 }) {
-  const isUnlocked = isLoggedIn && credits >= 500;
+export default function DealRoom({ onBuyCredits }) {
+  const { isLoggedIn, credits } = useAuth();
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const isUnlocked = isLoggedIn && credits >= 1;
 
   if (!isUnlocked) {
     return (
@@ -14,9 +18,22 @@ export default function DealRoom({ onBuyCredits, isLoggedIn = false, credits = 0
         <p className="text-slate-500 mb-8 leading-relaxed">
           Access requires login, KYC, active credits, and a set goal. Exact location and documents are shared securely inside.
         </p>
-        <button onClick={onBuyCredits} className="px-10 py-4 bg-black text-white rounded-full font-bold shadow-xl hover:bg-slate-900 transition">
-          Buy Credits & Unlock
-        </button>
+        {!isLoggedIn ? (
+          <button onClick={() => setShowAuthModal(true)} className="px-10 py-4 bg-black text-white rounded-full font-bold shadow-xl hover:bg-slate-900 transition">
+            Login to Unlock
+          </button>
+        ) : (
+          <button onClick={onBuyCredits} className="px-10 py-4 bg-black text-white rounded-full font-bold shadow-xl hover:bg-slate-900 transition">
+            Buy Credits & Unlock
+          </button>
+        )}
+        {showAuthModal && (
+          <AuthModal
+            onClose={() => setShowAuthModal(false)}
+            initialRole="buyer"
+            initialTab="login"
+          />
+        )}
       </div>
     );
   }
